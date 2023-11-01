@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SocialLoginButton extends StatelessWidget {
+  
   const SocialLoginButton({
     super.key,
     required this.child,
