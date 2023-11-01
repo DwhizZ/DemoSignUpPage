@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:login_pages/src/global_widgets/app_text_field.dart';
 import 'package:login_pages/src/pages/page2/components/sign_button_2.dart';
-
 import '../../config/themes/app_styles.dart';
-import '../page1/components/my_text_fields.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -44,7 +43,7 @@ class _LogInState extends State<LogIn> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                     Container(
+                    Container(
                       alignment: Alignment.center,
                       height: 50,
                       width: 150,
@@ -52,8 +51,10 @@ class _LogInState extends State<LogIn> {
                           borderRadius: BorderRadius.circular(5),
                           color: const Color.fromARGB(255, 231, 229, 229)),
                       child: Container(
-                        decoration: const BoxDecoration(shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 5, 56, 97), ),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromARGB(255, 5, 56, 97),
+                        ),
                         padding: const EdgeInsets.all(6),
                         child: const FaIcon(
                           FontAwesomeIcons.google,
@@ -78,18 +79,17 @@ class _LogInState extends State<LogIn> {
                   ],
                 ),
                 const SizedBox(height: 80),
-                const Text('Email', style: AppStyles.subHeaderStyle),
-                const SizedBox(height: 15),
-                MyTextFields(
+                AppTextField(
                     controller: emailController,
                     hintText: 'jennywilson@example.com',
-                    isPasswordVisible: false),
+                    isPasswordVisible: false,
+                    label: 'Email'),
                 const SizedBox(height: 25),
-                const Text('Password', style: AppStyles.subHeaderStyle),
-                MyTextFields(
+                AppTextField(
                     controller: passwordController,
                     hintText: '********',
-                    isPasswordVisible: isPasswordVisible),
+                    isPasswordVisible: isPasswordVisible,
+                    label: 'Password'),
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/forgetpassword');

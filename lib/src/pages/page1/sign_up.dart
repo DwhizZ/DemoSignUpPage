@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
-import 'package:login_pages/src/pages/page1/components/my_text_fields.dart';
+
 import 'package:login_pages/src/pages/page1/components/sign_button.dart';
 
 class SignUp extends StatefulWidget {
@@ -87,18 +87,17 @@ class _SignUpState extends State<SignUp> {
                   label: "Name",
                 ),
                 const SizedBox(height: 25),
-                const Text('Email', style: AppStyles.subHeaderStyle),
-                const SizedBox(height: 15),
-                MyTextFields(
+                AppTextField(
                     controller: emailController,
-                    hintText: 'jennywilson@example.com',
-                    isPasswordVisible: false),
+                    hintText: 'willis@gmail.com',
+                    isPasswordVisible: false,
+                    label: 'Email'),
                 const SizedBox(height: 25),
-                const Text('Password', style: AppStyles.subHeaderStyle),
-                MyTextFields(
+                AppTextField(
                     controller: passwordController,
                     hintText: '********',
-                    isPasswordVisible: isPasswordVisible),
+                    isPasswordVisible: isPasswordVisible,
+                    label: 'Password'),
                 const SizedBox(height: 80),
                 const SignButton(
                     text: 'Sign Up',
