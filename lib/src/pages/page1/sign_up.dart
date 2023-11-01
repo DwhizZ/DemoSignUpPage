@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
+import 'package:login_pages/src/global_widgets/app_text_field.dart';
 import 'package:login_pages/src/pages/page1/components/my_text_fields.dart';
 import 'package:login_pages/src/pages/page1/components/sign_button.dart';
 
@@ -51,8 +52,10 @@ class _SignUpState extends State<SignUp> {
                           borderRadius: BorderRadius.circular(5),
                           color: const Color.fromARGB(255, 231, 229, 229)),
                       child: Container(
-                        decoration: const BoxDecoration(shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 5, 56, 97), ),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color.fromARGB(255, 5, 56, 97),
+                        ),
                         padding: const EdgeInsets.all(6),
                         child: const FaIcon(
                           FontAwesomeIcons.google,
@@ -77,12 +80,12 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 const SizedBox(height: 70),
-                const Text('Name', style: AppStyles.subHeaderStyle),
-                const SizedBox(height: 15),
-                MyTextFields(
-                    controller: nameController,
-                    hintText: 'Jenny Wilson',
-                    isPasswordVisible: false),
+                AppTextField(
+                  controller: nameController,
+                  hintText: "your name",
+                  isPasswordVisible: isPasswordVisible,
+                  label: "Name",
+                ),
                 const SizedBox(height: 25),
                 const Text('Email', style: AppStyles.subHeaderStyle),
                 const SizedBox(height: 15),
