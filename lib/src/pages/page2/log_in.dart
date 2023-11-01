@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
-import 'package:login_pages/src/global_widgets/social_login_button.dart';
-import 'package:login_pages/src/global_widgets/sociall_log_in_bar.dart';
+import 'package:login_pages/src/global_widgets/social_login_bar.dart';
 import 'package:login_pages/src/pages/page2/components/sign_button_2.dart';
 import '../../config/themes/app_styles.dart';
 

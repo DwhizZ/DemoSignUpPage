@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
@@ -7,7 +6,11 @@ import 'package:login_pages/src/global_widgets/social_login_button.dart';
 class SocialLogInBar extends StatelessWidget {
   const SocialLogInBar({
     super.key,
+    this.onGooglePressed,
+    this.onFacebookPressed,
   });
+
+  final void Function()? onGooglePressed, onFacebookPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class SocialLogInBar extends StatelessWidget {
           children: [
             SocialLoginButton(
               child: InkWell(
-                onTap: () {},
+                onTap: onGooglePressed,
                 child: Container(
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
@@ -39,7 +42,7 @@ class SocialLogInBar extends StatelessWidget {
             ),
             SocialLoginButton(
               child: InkWell(
-                onTap: () {},
+                onTap: onFacebookPressed,
                 child: const Icon(
                   Icons.facebook,
                   color: Color.fromARGB(255, 5, 56, 97),
