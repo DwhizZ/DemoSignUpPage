@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
+import 'package:login_pages/src/global_widgets/social_login_button.dart';
 
 import 'package:login_pages/src/pages/page1/components/sign_button.dart';
 
@@ -37,8 +39,7 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 const SizedBox(height: 50),
-                //TODO: Fix this. It should be a global widget with two onPressed functions, one for google, one for login. Use the InkWell widget
-                /**
+              
                 const Text('Sign Up with one of the following options.',
                     style: AppStyles.bodyStyle),
                 const SizedBox(height: 15),
@@ -46,29 +47,35 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SocialLoginButton(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color.fromARGB(255, 5, 56, 97),
-                        ),
-                        padding: const EdgeInsets.all(6),
-                        child: const Icon(
-                          FontAwesomeIcons.google,
-                          color: Colors.white,
-                          size: 20,
+                      child: InkWell(
+                        onTap: (){},
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color.fromARGB(255, 5, 56, 97),
+                          ),
+                          padding: const EdgeInsets.all(6),
+                          child: const Icon(
+                            FontAwesomeIcons.google,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
                       ),
                     ),
-                    const SocialLoginButton(
-                      child: Icon(
-                        Icons.facebook,
-                        color: Color.fromARGB(255, 5, 56, 97),
-                        size: 35,
+                     SocialLoginButton(
+                      child: InkWell(
+                        onTap: (){},
+                        child: const Icon(
+                          Icons.facebook,
+                          color: Color.fromARGB(255, 5, 56, 97),
+                          size: 35,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                 */
+                 
                 const SizedBox(height: 70),
                 AppTextField(
                   controller: nameController,
