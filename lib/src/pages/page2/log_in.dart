@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:login_pages/src/config/routes/route_names.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
+import 'package:login_pages/src/global_widgets/page_app_bar.dart';
 import 'package:login_pages/src/global_widgets/social_login_bar.dart';
 import 'package:login_pages/src/pages/page2/components/sign_button_2.dart';
 import '../../config/themes/app_styles.dart';
@@ -25,16 +27,11 @@ class _LogInState extends State<LogIn> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                    ),
-                    const Text('  Log in', style: AppStyles.headerStyle),
-                  ],
+                PageAppBar(
+                  text: 'Log In',
+                  pageBackArrowPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 const SizedBox(height: 50),
                 const SocialLogInBar(),
@@ -52,7 +49,7 @@ class _LogInState extends State<LogIn> {
                     label: 'Password'),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/forgetpassword');
+                    Navigator.pushNamed(context, Routes.forgotPasswordPage);
                   },
                   child: const Text(
                     'Forgot Password?',

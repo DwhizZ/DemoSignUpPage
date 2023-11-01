@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_pages/src/config/themes/app_styles.dart';
+import 'package:login_pages/src/config/routes/route_names.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
+import 'package:login_pages/src/global_widgets/page_app_bar.dart';
 import 'package:login_pages/src/global_widgets/social_login_bar.dart';
 
 import 'package:login_pages/src/pages/page1/components/sign_button.dart';
@@ -27,18 +28,14 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // TODO: EXTRACT THIS APP BAR
+              
                 // TODO: REMOVE SIZEDBOX
-                // TODO: UPDATE YOUR ROUTES TO HAVE A CLASS THAT HOLDS THE NAMES
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/login');
-                        },
-                        icon: const Icon(Icons.arrow_back_ios_new_outlined)),
-                    const Text('  Sign Up', style: AppStyles.headerStyle),
-                  ],
+                
+                PageAppBar(
+                  text: 'Sign Up',
+                  pageBackArrowPressed: () {
+                    Navigator.pushNamed(context, Routes.logInPage);
+                  },
                 ),
                 const SizedBox(height: 50),
                 const SocialLogInBar(),

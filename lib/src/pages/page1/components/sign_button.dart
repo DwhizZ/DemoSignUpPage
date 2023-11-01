@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_pages/src/config/routes/route_names.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
 
 class SignButton extends StatelessWidget {
@@ -40,7 +41,7 @@ class SignButton extends StatelessWidget {
             Text(followUpText, style: AppStyles.bodyStyle),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushNamed(context, Routes.logInPage);
               },
               child: Text(
                 command,

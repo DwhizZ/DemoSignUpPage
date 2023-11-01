@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_pages/src/global_widgets/app_text_field.dart';
+import 'package:login_pages/src/global_widgets/page_app_bar.dart';
 import 'package:login_pages/src/pages/page3/components/sign_button_3.dart';
 
-import '../../config/themes/app_styles.dart';
+
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -18,16 +19,11 @@ class ForgetPassword extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(Icons.arrow_back_ios_new_outlined)),
-                    const Text('  Forgot Password',
-                        style: AppStyles.headerStyle),
-                  ],
+                PageAppBar(
+                  text: 'Forgot Password',
+                  pageBackArrowPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 const SizedBox(height: 60),
                 AppTextField(
