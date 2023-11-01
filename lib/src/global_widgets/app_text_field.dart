@@ -1,5 +1,3 @@
-// TODO: extract the text fields to this file
-
 import 'package:flutter/material.dart';
 import 'package:login_pages/src/config/themes/app_styles.dart';
 
@@ -23,7 +21,6 @@ class AppTextField extends StatefulWidget {
 class _AppTextFieldState extends State<AppTextField> {
   late bool isPasswordVisible;
 
-  // TODO: override initstate
   @override
   void initState() {
     isPasswordVisible = widget.isPasswordVisible;
